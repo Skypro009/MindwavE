@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindwavE.MainPage"
+             BackgroundColor="#F5F5F5">
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Top Section: Logo and Welcome Message -->
+        <VerticalStackLayout Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,50,0,20">
+            <!-- Brain-Lotus Logo -->
+            <Image Source="brain_lotus_logo.png" Aspect="AspectFit" HeightRequest="150" WidthRequest="150" Margin="0,0,0,20"/>
+            <!-- Welcome Text -->
+            <Label Text="Zdravo, drago nam je da si tu." FontSize="28" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#333333"/>
+            <!-- Description Text -->
+            <Label Text="Mindwave te povezuje sa 24/7 podrškom,edukacijom i lokalnom zajednicom"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Margin="40,10,40,30"
+                   TextColor="#666666"/>
+        </VerticalStackLayout>
+
+        <!-- Bottom Section: Start Button -->
+        <VerticalStackLayout Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Padding="0,0,0,50">
+            <Button Text="Započni!"
+                    BackgroundColor="#333366"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="25"
+                    HeightRequest="60"
+                    WidthRequest="250"
+                    HorizontalOptions="Center"
+                    Command="{Binding StartCommand}"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

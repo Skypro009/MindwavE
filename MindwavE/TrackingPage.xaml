@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindwavE.TrackingPage"
+             BackgroundColor="#F5F5F5">
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Top Section: Header with Chat, Settings -->
+        <Grid Grid.Row="0" ColumnDefinitions="*, Auto, Auto" Padding="20,30,20,10" VerticalOptions="Start">
+            <!-- Chat with AI Button -->
+            <Frame Grid.Column="0" CornerRadius="20" HasShadow="False" BackgroundColor="White" Padding="10,5" Margin="0,0,10,0" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" Spacing="5" VerticalOptions="Center">
+                    <Image Source="ai_chat_icon.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center"/>
+                    <Label Text="Razgovaraj sa našim AI-ch..." VerticalOptions="Center" TextColor="#333333"/>
+                    <Image Source="heart_icon.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+            <!-- Settings Icon -->
+            <Image Grid.Column="1" Source="settings_icon.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" Margin="0,0,10,0"/>
+        </Grid>
+
+        <!-- Main Content Section -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20,0,20,20" Spacing="20">
+                <!-- Tracking Section -->
+                <Label Text="Praćenje" FontSize="26" FontAttributes="Bold" TextColor="#333333" Margin="0,10,0,0"/>
+
+                <!-- Mood Tracker Card -->
+                <Frame CornerRadius="15" HasShadow="False" BackgroundColor="White" Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Grid ColumnDefinitions="Auto, *, Auto">
+                            <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
+                                <Image Source="mood_sad_cry.png" HeightRequest="40" WidthRequest="40"/>
+                                <Label Text="Osećaš se Tužno" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" TextColor="#333333"/>
+                            </StackLayout>
+                            <Image Grid.Column="2" Source="edit_icon.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Center"/>
+                        </Grid>
+                        <Label Text="Nedeljni tracker raspoloženja" FontSize="16" FontAttributes="Bold" TextColor="#333333"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="SpaceEvenly" Margin="0,10,0,10">
+                            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                                <Image Source="mood_happy.png" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="Pon" FontSize="12" TextColor="#666666"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                                <Image Source="mood_neutral.png" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="Uto" FontSize="12" TextColor="#666666"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                                <Image Source="mood_sad.png" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="Sre" FontSize="12" TextColor="#666666"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                                <Image Source="mood_sad_cry.png" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="Čet" FontSize="12" TextColor="#666666"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                                <Image Source="mood_happy.png" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="Pet" FontSize="12" TextColor="#666666"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                                <Image Source="mood_very_happy.png" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="Sub" FontSize="12" TextColor="#666666"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                                <Image Source="mood_neutral.png" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="Ned" FontSize="12" TextColor="#666666"/>
+                            </VerticalStackLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" Spacing="5">
+                            <Label Text="Vidi više" TextColor="#666666" VerticalOptions="Center"/>
+                            <Image Source="arrow_right_icon.png" HeightRequest="15" WidthRequest="15" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Sleep Quality Section -->
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Kvalitet sna" FontSize="20" FontAttributes="Bold" TextColor="#333333"/>
+                    <Frame CornerRadius="15" HasShadow="False" BackgroundColor="White" Padding="15">
+                        <VerticalStackLayout Spacing="10">
+                            <Grid ColumnDefinitions="*, Auto, Auto">
+                                <Label Text="Mart 19-25" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" TextColor="#333333"/>
+                                <Image Grid.Column="1" Source="arrow_left_icon.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Margin="0,0,10,0"/>
+                                <Image Grid.Column="2" Source="arrow_right_icon.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center"/>
+                            </Grid>
+                            <!-- Bar Chart for Sleep Quality - Simplified representation -->
+                            <Grid HeightRequest="150" Margin="0,10,0,0">
+                                <GraphicsView>
+                                    <GraphicsView.Drawable>
+                                        <PathGeometry>
+                                            <PathFigure StartPoint="30,120">
+                                                <LineSegment Point="30,120" />
+                                                <LineSegment Point="30,80" />
+                                                <LineSegment Point="30,120" />
+                                                <!-- This is a simplified representation. A real bar chart would require more complex drawing or a third-party library. -->
+                                            </PathFigure>
+                                        </PathGeometry>
+                                    </GraphicsView.Drawable>
+                                </GraphicsView>
+                                <!-- Y-axis Labels -->
+                                <VerticalStackLayout HorizontalOptions="Start" VerticalOptions="FillAndExpand" Margin="0,0,0,0">
+                                    <Label Text="9 sati" FontSize="12" TextColor="#666666" VerticalOptions="Start" Margin="0,5,0,0"/>
+                                    <Label Text="cilj" FontSize="12" TextColor="#8DED8D" VerticalOptions="Start" Margin="0,25,0,0"/>
+                                    <Label Text="6 sati" FontSize="12" TextColor="#666666" VerticalOptions="Start" Margin="0,25,0,0"/>
+                                    <Label Text="3 sati" FontSize="12" TextColor="#666666" VerticalOptions="Start" Margin="0,25,0,0"/>
+                                    <Label Text="0 sati" FontSize="12" TextColor="#666666" VerticalOptions="End" Margin="0,0,0,5"/>
+                                </VerticalStackLayout>
+                                <!-- X-axis Labels - Simplified, you'd typically bind to data -->
+                                <HorizontalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="End" Spacing="10" Margin="40,0,0,0">
+                                    <Label Text="Pon" FontSize="12" TextColor="#666666" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="Uto" FontSize="12" TextColor="#666666" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="Sre" FontSize="12" TextColor="#666666" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="Čet" FontSize="12" TextColor="#666666" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="Pet" FontSize="12" TextColor="#666666" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="Sub" FontSize="12" TextColor="#666666" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="Ned" FontSize="12" TextColor="#666666" HorizontalOptions="CenterAndExpand"/>
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom Navigation Bar -->
+        <Grid Grid.Row="2" ColumnDefinitions="*, *, *, *" BackgroundColor="White" Padding="0,10" VerticalOptions="End">
+            <StackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="menu_icon.png" HeightRequest="30" WidthRequest="30"/>
+            </StackLayout>
+            <StackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="message_icon.png" HeightRequest="30" WidthRequest="30"/>
+            </StackLayout>
+            <StackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="calendar_icon.png" HeightRequest="30" WidthRequest="30"/>
+            </StackLayout>
+            <StackLayout Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="profile_icon.png" HeightRequest="30" WidthRequest="30"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
