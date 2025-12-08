@@ -6,19 +6,22 @@
     xmlns:local="clr-namespace:MindwavE"
     Title="MindwavE">
 
-    <ShellContent
-        Title="Main"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem x:Name="MainFlyoutItem" Title="Main">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:HomePage}"
-        Route="HomePage" />
+    <FlyoutItem x:Name="HomeFlyoutItem" Title="Home" IsEnabled="False">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:HomePage}"
+            Route="HomePage" />
+    </FlyoutItem>
 
-    <ShellContent
-        Title="Tracking"
-        ContentTemplate="{DataTemplate local:TrackingPage}"
-        Route="TrackingPage" />
+    <FlyoutItem x:Name="TrackingFlyoutItem" Title="Tracking" IsEnabled="False">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:TrackingPage}"
+            Route="TrackingPage" />
+    </FlyoutItem>
 
 </Shell>
