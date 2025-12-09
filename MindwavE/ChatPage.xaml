@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindwavE.ChatPage"
+             Title="Chat bot"
+             BackgroundColor="#F5F5F5">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Header -->
+        <Label Grid.Row="0"
+               Text="AI Chat bot"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Padding="0,30,0,15"
+               TextColor="#333333" />
+
+        <!-- Chat messages -->
+        <CollectionView Grid.Row="1"
+                        x:Name="ChatMessagesView"
+                        ItemsSource="{Binding Messages}"
+                        HeightRequest="400"
+                        Margin="20,0"
+                        VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="2" Padding="8" HasShadow="False" BackgroundColor="#FFF" CornerRadius="12">
+                        <Label Text="{Binding Message}" TextColor="#333" LineBreakMode="WordWrap" />
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Input field & send button -->
+        <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="20,10,20,30" Spacing="10">
+            <Entry x:Name="MessageEntry"
+                   Placeholder="Unesi poruku..."
+                   HorizontalOptions="FillAndExpand"
+                   FontSize="16"
+                   TextColor="Black"/>
+            <Button Text="Pošalji" x:Name="SendButton" WidthRequest="100"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

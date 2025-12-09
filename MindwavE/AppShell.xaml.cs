@@ -9,6 +9,7 @@ namespace MindwavE
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(TrackingPage), typeof(TrackingPage));
+            Routing.RegisterRoute(nameof(ChatPage), typeof(ChatPage));
             // Start with only the Main page enabled in the flyout.
             ShowOnlyMain();
         }
@@ -20,6 +21,8 @@ namespace MindwavE
                 HomeFlyoutItem.IsEnabled = false;
             if (TrackingFlyoutItem != null)
                 TrackingFlyoutItem.IsEnabled = false;
+            if (ChatFlyoutItem != null)
+                ChatFlyoutItem.IsEnabled = false;
             if (MainFlyoutItem != null)
                 MainFlyoutItem.IsEnabled = true;
         }
@@ -31,6 +34,8 @@ namespace MindwavE
                 HomeFlyoutItem.IsEnabled = true;
             if (TrackingFlyoutItem != null)
                 TrackingFlyoutItem.IsEnabled = true;
+            if (ChatFlyoutItem != null)
+                ChatFlyoutItem.IsEnabled = true;
 
             // Remove the initial Main entry so it no longer appears in the flyout.
             if (MainFlyoutItem != null && this.Items.Contains(MainFlyoutItem))
