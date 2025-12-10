@@ -32,19 +32,11 @@
 
                 <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
 
-                    <Image Source="ai_chat_icon.png"
-                           HeightRequest="20"
-                           WidthRequest="20"
-                           VerticalOptions="Center" />
-
-                    <Label Text="Razgovaraj sa našim AI-chat botom"
-                           VerticalOptions="Center"
-                           TextColor="#333333" />
-
                     <!-- Circular background with image -->
                     <Border
                         WidthRequest="50"
                         HeightRequest="50"
+                        Margin="5, 0, 0, 0"
                         BackgroundColor="#cec9f5"
                         StrokeShape="Ellipse"
                         HorizontalOptions="End"
@@ -61,6 +53,12 @@
 
                     </Border>
 
+                    <Label Text="Razgovaraj sa našim AI-chat botom"
+                           FontFamily="NunitoSans_Italic"
+                           VerticalOptions="Center"
+                           Padding="20, 0, 0, 0"
+                           TextColor="#333333" />
+
                 </HorizontalStackLayout>
 
             </Border>
@@ -76,7 +74,8 @@
                 <Label Text="Dobrodošao/la nazad, Alex!" 
                        FontSize="45" 
                        FontAttributes="Bold" 
-                       TextColor="#333333" 
+                       FontFamily="NunitoSans"
+                       TextColor="#333333"
                        Margin="0,10,0,0"
                        HorizontalOptions="Center"
                        HorizontalTextAlignment="Center"/>
@@ -108,7 +107,7 @@
                             VerticalOptions="Center">
 
 
-                            <Label Text="Zajednica" TextColor="#FFFFFF" FontSize="30" FontAttributes="Bold" LineBreakMode="WordWrap" MaxLines="2" />
+                            <Label Text="Zajednica" TextColor="#FFFFFF" FontSize="30" FontAttributes="Bold" FontFamily="NunitoSans" LineBreakMode="WordWrap" MaxLines="2" />
                             <Image 
                                 Source="multiple_users.png" 
                                 HeightRequest="100" 
@@ -135,8 +134,8 @@
                         </Border.Shadow>
 
                         <StackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center" >
-                            
-                            <Label Text="Dnevnik" TextColor="#FFFFFF" FontSize="30" FontAttributes="Bold" LineBreakMode="WordWrap" MaxLines="2" />
+
+                            <Label Text="Dnevnik" TextColor="#FFFFFF" FontSize="30" FontAttributes="Bold" FontFamily="NunitoSans" LineBreakMode="WordWrap" MaxLines="2" />
                             <Image Source="book_diary_icon.png" HeightRequest="100" WidthRequest="100"/>
                             
                         </StackLayout>
@@ -167,8 +166,8 @@
                         </Border.Shadow>
                         <VerticalStackLayout Spacing="10">
                             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" Margin="0, 15, 0, 10">
-                                <Label Text="Kako se osećaš danas?" TextColor="#333333" FontSize="30" HorizontalOptions="Center" VerticalOptions="Start"/>
-                                <Image Source="settings_gear.png" HeightRequest="35" WidthRequest="35" HorizontalOptions="Center" VerticalOptions="Start" Margin="30, 0, 0, 0"/>
+                                <Label Text="Kako se osećaš danas?" TextColor="#333333" FontSize="30" HorizontalOptions="Center" VerticalOptions="Center" FontFamily="NunitoSans"/>
+                                <Image Source="navi_menu_second.png" HeightRequest="35" WidthRequest="35" HorizontalOptions="Center" VerticalOptions="Center" Margin="30, 0, 0, 0"/>
                             </HorizontalStackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="17">
                                 <Image Source="mindwave_icon_test.png" HeightRequest="80" WidthRequest="80"/>
@@ -183,7 +182,10 @@
 
                 <!-- Exercises Section -->
                 <VerticalStackLayout Spacing="10" Padding="20,30,20,10">
-                    <Label Text="Vežbe" FontSize="30" FontAttributes="Bold" TextColor="#333333" HorizontalOptions="Center"/>
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <Label Text="Vežbe" FontSize="30" FontAttributes="Bold" FontFamily="NunitoSans" TextColor="#333333" HorizontalOptions="Center"/>
+                        <Image Source="navi_menu_second.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center" Margin="5, 0, 0, 0"/>
+                    </HorizontalStackLayout>
                     <!-- Deep Breathing Exercise -->
                     <Border 
                         StrokeShape="RoundRectangle 40"
@@ -209,8 +211,8 @@
 
                             <!-- Text -->
                             <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Margin="15,0">
-                                <Label Text="Duboko disanje" FontSize="18" FontAttributes="Bold" TextColor="#333333"/>
-                                <Label Text="Završeno 80%" FontSize="14" TextColor="#666666"/>
+                                <Label Text="Duboko disanje" FontSize="18" FontAttributes="Bold" FontFamily="NunitoSans" TextColor="#333333"/>
+                                <Label Text="Završeno 80%" FontSize="14" FontFamily="NunitoSans_Italic" TextColor="#666666"/>
                             </VerticalStackLayout>
 
                             <!-- Progress bar -->
@@ -252,8 +254,8 @@
                             
                             <!-- TEXT -->
                             <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Margin="15,0">
-                                <Label Text="Spavanje" FontSize="18" FontAttributes="Bold" TextColor="#333333"/>
-                                <Label Text="Završeno 100%" FontSize="14" TextColor="#666666"/>
+                                <Label Text="Spavanje" FontSize="18" FontAttributes="Bold" FontFamily="NunitoSans" TextColor="#333333"/>
+                                <Label Text="Završeno 100%" FontSize="14" FontFamily="NunitoSans_Italic" TextColor="#666666"/>
                             </VerticalStackLayout>
 
                             <!-- Progress bar -->

@@ -10,6 +10,7 @@
                Text="AI Chat bot"
                FontSize="28"
                FontAttributes="Bold"
+               FontFamily="NunitoSans"
                HorizontalOptions="Center"
                Padding="0,30,0,15"
                TextColor="#333333" />
@@ -32,12 +33,51 @@
 
         <!-- Input field & send button -->
         <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="20,10,20,30" Spacing="10">
-            <Entry x:Name="MessageEntry"
+            <Border
+                Grid.Column="0"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 40"
+                Background="White"
+                Padding="10,10"
+                Margin="0,0,10,0"
+                HorizontalOptions="FillAndExpand"
+                MaximumWidthRequest="750"
+                >
+
+                <Border.Shadow>
+                    <Shadow
+                        Opacity="0.1"
+                        Radius="3"
+                        Offset="0,7"
+                        Brush="Black" />
+                </Border.Shadow>
+
+                <Entry x:Name="MessageEntry"
                    Placeholder="Unesi poruku..."
-                   HorizontalOptions="FillAndExpand"
+                   HorizontalOptions="Fill"
                    FontSize="16"
-                   TextColor="Black"/>
-            <Button Text="Pošalji" x:Name="SendButton" WidthRequest="100"/>
+                   FontFamily="NunitoSans_Italic"
+                   TextColor="Black"
+                   
+                   />
+            </Border>
+            <Button 
+                Text="Pošalji" 
+                x:Name="SendButton" 
+                FontFamily="NunitoSans"
+                FontSize="20"
+                CornerRadius="30"
+                FontAttributes="Bold"
+                WidthRequest="100"
+                >
+                <Button.Shadow>
+                    <Shadow
+                    Opacity="0.1"
+                    Radius="3"
+                    Offset="0,7"
+                    Brush="Black" />
+                </Button.Shadow>
+            </Button>
         </StackLayout>
     </Grid>
 </ContentPage>

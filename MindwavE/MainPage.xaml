@@ -9,10 +9,11 @@
             <!-- Brain-Lotus Logo -->
             <Image Source="logo.png" Aspect="AspectFit" HeightRequest="250" WidthRequest="250" Margin="0,0,0,20"/>
             <!-- Welcome Text -->
-            <Label Text="Zdravo, drago nam je da si tu." FontSize="28" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#333333"/>
+            <Label Text="Zdravo, drago nam je da si tu." FontSize="28" FontFamily="NunitoSans" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#333333"/>
             <!-- Description Text -->
-            <Label Text="Mindwave te povezuje sa 24/7 podrškom,edukacijom i lokalnom zajednicom"
+            <Label Text="MindwavE te povezuje sa 24/7 podrškom, edukacijom i lokalnom zajednicom"
                    FontSize="16"
+                   FontFamily="NunitoSans_Italic"
                    HorizontalOptions="Center"
                    HorizontalTextAlignment="Center"
                    Margin="40,10,40,30"
@@ -22,9 +23,11 @@
         <!-- Bottom Section: Start Button -->
         <VerticalStackLayout Grid.Row="2" HorizontalOptions="Center" VerticalOptions="End" Padding="0,0,0,50">
             <Button Text="Započni!"
-                    BackgroundColor="#333366"
+                    BackgroundColor="#262433"
                     TextColor="White"
-                    FontSize="20"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    FontFamily="NunitoSans"
                     CornerRadius="25"
                     HeightRequest="60"
                     WidthRequest="250"
