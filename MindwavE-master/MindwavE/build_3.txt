@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml(1,1): error MAUIG1001: An error occured while parsing Xaml: Unexpected end tag. Line 19, position 3.. [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(7,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\MainPage.xaml.cs(31,26): error CS1061: 'AppShell' does not contain a definition for 'EnableMenuAndRemoveMain' and no accessible extension method 'EnableMenuAndRemoveMain' accepting a first argument of type 'AppShell' could be found (are you missing a using directive or an assembly reference?) [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+
+Build FAILED.
+    5 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:00:06.26

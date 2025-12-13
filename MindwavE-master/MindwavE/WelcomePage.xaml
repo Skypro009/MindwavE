@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindwavE.WelcomePage"
+             BackgroundColor="#F5F0FF"
+             Shell.NavBarIsVisible="False">
+    
+    <Grid RowDefinitions="*, Auto, *">
+        <!-- Top Decoration (optional subtle background) -->
+        
+        <!-- Center Content -->
+        <VerticalStackLayout Grid.Row="1" 
+                             Spacing="24" 
+                             Padding="40" 
+                             VerticalOptions="Center" 
+                             HorizontalOptions="Center">
+            
+            <!-- Logo/Brain Image -->
+            <Border WidthRequest="180" 
+                    HeightRequest="180" 
+                    StrokeThickness="0"
+                    BackgroundColor="#E8F5F0"
+                    StrokeShape="RoundRectangle 90"
+                    HorizontalOptions="Center">
+                <Image Source="logo.png" 
+                       WidthRequest="140" 
+                       HeightRequest="140"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Border>
+            
+            <!-- Welcome Text -->
+            <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                <Label Text="Zdravo, drago nam"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource PrimaryDarkText}"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="je da si tu."
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource PrimaryDarkText}"
+                       HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+            
+            <!-- Subtitle -->
+            <Label Text="MindwavE te povezuje sa&#x0a;24/7 podrškom, edukacijom&#x0a;i lokalnom zajednicom"
+                   FontSize="16"
+                   TextColor="{StaticResource Gray500}"
+                   HorizontalTextAlignment="Center"
+                   LineHeight="1.4"/>
+            
+        </VerticalStackLayout>
+        
+        <!-- Bottom Button -->
+        <VerticalStackLayout Grid.Row="2" 
+                             Padding="40,0,40,60" 
+                             VerticalOptions="End">
+            <Button Text="Započni!"
+                    Style="{StaticResource BigButton}"
+                    BackgroundColor="#1F1F1F"
+                    TextColor="White"
+                    CornerRadius="30"
+                    HeightRequest="56"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Clicked="OnStartClicked"/>
+        </VerticalStackLayout>
+    </Grid>
+    
+</ContentPage>
