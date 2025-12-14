@@ -10,6 +10,9 @@ namespace MindwavE
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(TrackingPage), typeof(TrackingPage));
             Routing.RegisterRoute(nameof(ChatPage), typeof(ChatPage));
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
+            Routing.RegisterRoute(nameof(SubscriptionPage), typeof(SubscriptionPage));
             // Start with only the Main page enabled in the flyout.
             ShowOnlyMain();
         }

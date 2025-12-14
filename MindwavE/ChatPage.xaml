@@ -25,7 +25,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame Margin="2" Padding="8" HasShadow="False" BackgroundColor="#FFF" CornerRadius="12">
-                        <Label Text="{Binding Message}" TextColor="#333" LineBreakMode="WordWrap" />
+                        <Label Text="{Binding Content}" TextColor="#333" LineBreakMode="WordWrap" />
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
@@ -63,6 +63,7 @@
             </Border>
             <Button 
                 Text="Pošalji" 
+                Clicked="OnSendClicked"
                 x:Name="SendButton" 
                 FontFamily="NunitoSans"
                 FontSize="20"

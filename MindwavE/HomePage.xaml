@@ -64,7 +64,11 @@
             </Border>
 
             <!-- Settings Icon -->
-            <Image Grid.Column="1" Source="settings_gear.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center" Margin="15,0,10,0"/>
+            <Image Grid.Column="1" Source="settings_gear.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center" Margin="15,0,10,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoToSubscriptionPage" />
+                </Image.GestureRecognizers>
+            </Image>
         </Grid>
 
         <!-- Main Content Section -->

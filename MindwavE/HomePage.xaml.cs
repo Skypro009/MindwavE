@@ -9,6 +9,11 @@ public partial class HomePage : ContentPage
 
     private async void GoToChatPage(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//ChatPage");
+        await Shell.Current.GoToAsync("//ChatPage"); // Using absolute route for TabBar page
+    }
+
+    private async void GoToSubscriptionPage(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(SubscriptionPage));
     }
 }

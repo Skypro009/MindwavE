@@ -27,6 +27,18 @@ namespace MindwavE
 
             // Register Supabase Client as a Singleton
             builder.Services.AddSingleton(provider => new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseKey, options));
+            
+            // Services
+            builder.Services.AddSingleton<Services.AuthService>();
+            builder.Services.AddSingleton<Services.ChatService>();
+            builder.Services.AddSingleton<Services.SubscriptionService>();
+            
+            // Pages
+            builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<RegisterPage>();
+            builder.Services.AddTransient<ChatPage>();
+            builder.Services.AddTransient<SubscriptionPage>();
+            builder.Services.AddTransient<HomePage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
