@@ -12,21 +12,27 @@
                FontAttributes="Bold"
                FontFamily="NunitoSans"
                HorizontalOptions="Center"
-               Padding="0,30,0,15"
+               Padding="0,15,0,15"
                TextColor="#333333" />
 
         <!-- Chat messages -->
         <CollectionView Grid.Row="1"
                         x:Name="ChatMessagesView"
                         ItemsSource="{Binding Messages}"
-                        HeightRequest="400"
                         Margin="20,0"
                         VerticalOptions="FillAndExpand">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Margin="2" Padding="8" HasShadow="False" BackgroundColor="#FFF" CornerRadius="12">
+                    <Border 
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 10"
+                        Background="White"
+                        Padding="10"
+                        Margin="10"
+                        HorizontalOptions="FillAndExpand"
+                        MaximumWidthRequest="800">
                         <Label Text="{Binding Content}" TextColor="#333" LineBreakMode="WordWrap" />
-                    </Frame>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
@@ -43,7 +49,7 @@
         </StackLayout>
 
         <!-- Input field & send button -->
-        <StackLayout Grid.Row="3" Orientation="Horizontal" Padding="20,10,20,30" Spacing="10">
+        <StackLayout Grid.Row="3" Orientation="Horizontal" Padding="20,10,20,10" Spacing="10">
             <Border
                 Grid.Column="0"
                 StrokeThickness="0"

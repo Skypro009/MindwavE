@@ -14,13 +14,15 @@
                    WidthRequest="100"
                    HorizontalOptions="Center" />
 
-            <Label Text="Welcome Back"
-                   FontSize="28"
+            <Label Text="Dobrodošao/la nazad!"
                    FontAttributes="Bold"
+                   FontFamily="NunitoSans"
+                   FontSize="28"
                    HorizontalOptions="Center"
                    TextColor="#333333"/>
             
-            <Label Text="Sign in to continue"
+            <Label Text="Prijavi se da bi nastavio/la"
+                   FontFamily="NunitoSans"
                    FontSize="16"
                    HorizontalOptions="Center"
                    TextColor="#666666"/>
@@ -33,24 +35,35 @@
                    HeightRequest="50" />
 
             <Entry x:Name="PasswordEntry"
-                   Placeholder="Password"
+                   Placeholder="Šifra"
                    IsPassword="True"
                    TextColor="Black"
                    PlaceholderColor="Gray"
                    HeightRequest="50" />
 
-            <Button Text="Login"
+            <Button Text="Prijavi se"
                     Clicked="OnLoginClicked"
-                    BackgroundColor="#512BD4"
+                    BackgroundColor="#aa9ff5"
                     TextColor="White"
                     CornerRadius="25"
-                    HeightRequest="50"
-                    FontAttributes="Bold"/>
+                    HeightRequest="55"
+                    FontSize="25"
+                    Margin="0, 45, 0, 0"
+                    FontAttributes="Bold">
+
+                <Button.Shadow>
+                    <Shadow
+                        Opacity="1"
+                        Radius="25"
+                        Offset="0,0"
+                        Brush="#AA9FF5" />
+                </Button.Shadow>
+            </Button>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="5">
-                <Label Text="Don't have an account?" TextColor="#666666" VerticalOptions="Center"/>
-                <Label Text="Sign Up" 
-                       TextColor="#512BD4" 
+                <Label Text="Nemaš nalog?" TextColor="#666666" VerticalOptions="Center"/>
+                <Label Text="Napravi nalog" 
+                       TextColor="#262433" 
                        FontAttributes="Bold"
                        VerticalOptions="Center">
                     <Label.GestureRecognizers>

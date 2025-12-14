@@ -9,13 +9,13 @@
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
 
-            <Label Text="Create Account"
+            <Label Text="Napravi nalog"
                    FontSize="28"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    TextColor="#333333"/>
 
-            <Label Text="Sign up to get started"
+            <Label Text="Napravi novi nalog za koršćenje MindwavE-a"
                    FontSize="16"
                    HorizontalOptions="Center"
                    TextColor="#666666"/>
@@ -34,24 +34,35 @@
                    HeightRequest="50" />
 
             <Entry x:Name="PasswordEntry"
-                   Placeholder="Password"
+                   Placeholder="Šifra"
                    IsPassword="True"
                    TextColor="Black"
                    PlaceholderColor="Gray"
                    HeightRequest="50" />
 
-            <Button Text="Sign Up"
+            <Button Text="Napravi nalog"
                     Clicked="OnRegisterClicked"
-                    BackgroundColor="#512BD4"
+                    BackgroundColor="#AA9FF5"
                     TextColor="White"
                     CornerRadius="25"
-                    HeightRequest="50"
-                    FontAttributes="Bold"/>
+                    HeightRequest="55"
+                    FontSize="25"
+                    Margin="0, 45, 0, 0"
+                    FontAttributes="Bold"
+                    >
+                <Button.Shadow>
+                    <Shadow
+                        Opacity="1"
+                        Radius="25"
+                        Offset="0,0"
+                        Brush="#AA9FF5" />
+                </Button.Shadow>
+            </Button>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="5">
-                <Label Text="Already have an account?" TextColor="#666666" VerticalOptions="Center"/>
-                <Label Text="Login" 
-                       TextColor="#512BD4" 
+                <Label Text="Već imaš nalog?" TextColor="#666666" VerticalOptions="Center"/>
+                <Label Text="Prijavi se" 
+                       TextColor="#262433" 
                        FontAttributes="Bold"
                        VerticalOptions="Center">
                     <Label.GestureRecognizers>
