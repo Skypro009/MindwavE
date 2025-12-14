@@ -37,7 +37,7 @@
                    WidthRequest="20"
                    VerticalOptions="Center" />
                     
-                    <Label Text="Razgovaraj sa našim AI-chat botom"
+                    <Label Text="Razgovaraj sa MindBot-om"
                    VerticalOptions="Center"
                    TextColor="#333333" />
 

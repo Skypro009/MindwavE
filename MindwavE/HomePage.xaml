@@ -53,7 +53,7 @@
 
                     </Border>
 
-                    <Label Text="Razgovaraj sa našim AI-chat botom"
+                    <Label Text="Razgovaraj sa MindBot-om"
                            FontFamily="NunitoSans_Italic"
                            VerticalOptions="Center"
                            Padding="20, 0, 0, 0"

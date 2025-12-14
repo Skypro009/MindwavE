@@ -32,6 +32,7 @@ namespace MindwavE
             builder.Services.AddSingleton<Services.AuthService>();
             builder.Services.AddSingleton<Services.ChatService>();
             builder.Services.AddSingleton<Services.SubscriptionService>();
+            builder.Services.AddSingleton<Services.GeminiService>();
             
             // Pages
             builder.Services.AddTransient<LoginPage>();
