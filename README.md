@@ -2,7 +2,7 @@
 
 ## Trenutno stanje: Alpha 1.0
 
-##### Trenutne mogućnosti:
+#### Trenutne mogućnosti:
 
 Login
 
