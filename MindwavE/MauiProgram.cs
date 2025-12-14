@@ -18,6 +18,16 @@ namespace MindwavE
                     fonts.AddFont("NunitoSansItalic.ttf", "NunitoSans_Italic");
                 });
 
+            // Supabase Configuration
+            var options = new Supabase.SupabaseOptions
+            {
+                AutoRefreshToken = true,
+                AutoConnectRealtime = true,
+            };
+
+            // Register Supabase Client as a Singleton
+            builder.Services.AddSingleton(provider => new Supabase.Client(Constants.SupabaseUrl, Constants.SupabaseKey, options));
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

@@ -8,13 +8,28 @@ public partial class MainPage : ContentPage
 {
     public ICommand StartCommand { get; }
 
-    public MainPage()
+    private readonly Supabase.Client _supabase;
+
+    public MainPage(Supabase.Client supabase)
     {
         InitializeComponent();
+        _supabase = supabase;
 
         // Provide the command implementation and set the BindingContext so XAML {Binding StartCommand} resolves.
         StartCommand = new Command(OnStart);
         BindingContext = this;
+        
+        // Verify initialization
+        VerifySupabase();
+    }
+
+    private async void VerifySupabase()
+    {
+        if (_supabase != null)
+        {
+           // Just a quick check that it's not null
+           System.Diagnostics.Debug.WriteLine($"Supabase Initialized!");
+        }
     }
 
     private async void OnStart()
