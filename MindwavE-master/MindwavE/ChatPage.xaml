@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindwavE.ChatPage"
+             Title="Chat bot"
+             BackgroundColor="#F5F5F5">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="0" RowSpacing="0">
+        <!-- Header -->
+        <Grid Grid.Row="0" BackgroundColor="White" Padding="15" ColumnDefinitions="Auto, *, Auto">
+            <Image Source="mindwave_assistant_icon.png" HeightRequest="40" WidthRequest="40" VerticalOptions="Center"/>
+            <Label Grid.Column="1"
+                   Text="MindwavE AI"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   FontFamily="NunitoSans"
+                   VerticalOptions="Center"
+                   Margin="10,0,0,0"
+                   TextColor="#333333" />
+        </Grid>
+
+        <!-- Chat messages -->
+        <CollectionView Grid.Row="1"
+                        x:Name="ChatMessagesView"
+                        ItemsSource="{Binding Messages}"
+                        Margin="0"
+                        VerticalOptions="FillAndExpand"
+                        BackgroundColor="#F5F5F5">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10, 5">
+                        <Frame Padding="12" CornerRadius="16" HasShadow="False" MaximumWidthRequest="280">
+                            <Frame.Triggers>
+                                <!-- User Message Style -->
+                                <DataTrigger TargetType="Frame" Binding="{Binding IsUser}" Value="True">
+                                    <Setter Property="HorizontalOptions" Value="End"/>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+                                </DataTrigger>
+                                <!-- AI Message Style -->
+                                <DataTrigger TargetType="Frame" Binding="{Binding IsUser}" Value="False">
+                                    <Setter Property="HorizontalOptions" Value="Start"/>
+                                    <Setter Property="BackgroundColor" Value="White"/>
+                                </DataTrigger>
+                            </Frame.Triggers>
+                            
+                            <Label Text="{Binding Text}" FontSize="16" LineBreakMode="WordWrap">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding IsUser}" Value="True">
+                                        <Setter Property="TextColor" Value="White"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding IsUser}" Value="False">
+                                        <Setter Property="TextColor" Value="#333333"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Input field & send button -->
+        <Grid Grid.Row="2" ColumnDefinitions="*, Auto" Padding="15" ColumnSpacing="10" BackgroundColor="White">
+            <Frame Grid.Column="0" Padding="10,0" CornerRadius="20" HasShadow="False" BackgroundColor="#F0F0F0" BorderColor="Transparent" HeightRequest="50">
+                <Entry x:Name="MessageEntry"
+                       Placeholder="Napiši poruku..."
+                       VerticalOptions="Center"
+                       FontSize="16"
+                       TextColor="Black"
+                       ReturnType="Send"
+                       Completed="OnSendClicked"
+                       />
+            </Frame>
+            
+            <ImageButton Grid.Column="1"
+                         Source="send_icon.png" 
+                         Clicked="OnSendClicked" 
+                         HeightRequest="40" 
+                         WidthRequest="40" 
+                         VerticalOptions="Center"
+                         BackgroundColor="{StaticResource Primary}"
+                         CornerRadius="20"
+                         Padding="8"/>
+        </Grid>
+    </Grid>
+</ContentPage>

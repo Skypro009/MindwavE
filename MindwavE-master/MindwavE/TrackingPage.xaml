@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindwavE.TrackingPage"
+             BackgroundColor="#F5F5F5">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="24">
+            <!-- Header -->
+            <Grid ColumnDefinitions="*, Auto">
+                <Label Text="Praćenje" FontSize="32" FontAttributes="Bold" TextColor="{StaticResource PrimaryDarkText}" FontFamily="OpenSansSemibold"/>
+                <ImageButton Grid.Column="1" Source="settings_gear.png" HeightRequest="32" WidthRequest="32"/>
+            </Grid>
+
+            <!-- Mood Tracker Card -->
+            <Frame Style="{StaticResource CardView}" Padding="16">
+                <VerticalStackLayout Spacing="16">
+                    <Grid ColumnDefinitions="Auto, *, Auto">
+                        <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
+                            <!-- Helper: ensure images exist or use emoji/text fallback -->
+                            <Image Source="mood_sad_cry.png" HeightRequest="32" WidthRequest="32"/>
+                            <Label Text="Osećaš se Tužno" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" TextColor="{StaticResource Gray900}"/>
+                        </StackLayout>
+                        <Image Grid.Column="2" Source="edit_icon.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Center" Opacity="0.5"/>
+                    </Grid>
+                    
+                    <Label Text="Nedeljni tracker raspoloženja" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource Gray900}"/>
+                    
+                    <!-- Weekly Moods -->
+                    <FlexLayout JustifyContent="SpaceBetween" Margin="0,10">
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center"><Label Text="😁" FontSize="24"/><Label Text="Pon" FontSize="12" TextColor="{StaticResource Gray500}"/></VerticalStackLayout>
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center"><Label Text="😐" FontSize="24"/><Label Text="Uto" FontSize="12" TextColor="{StaticResource Gray500}"/></VerticalStackLayout>
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center"><Label Text="😔" FontSize="24"/><Label Text="Sre" FontSize="12" TextColor="{StaticResource Gray500}"/></VerticalStackLayout>
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center"><Label Text="😭" FontSize="24"/><Label Text="Čet" FontSize="12" TextColor="{StaticResource Gray500}"/></VerticalStackLayout>
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center"><Label Text="😁" FontSize="24"/><Label Text="Pet" FontSize="12" TextColor="{StaticResource Gray500}"/></VerticalStackLayout>
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center"><Label Text="😁" FontSize="24"/><Label Text="Sub" FontSize="12" TextColor="{StaticResource Gray500}"/></VerticalStackLayout>
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center"><Label Text="😐" FontSize="24"/><Label Text="Ned" FontSize="12" TextColor="{StaticResource Gray500}"/></VerticalStackLayout>
+                    </FlexLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" Spacing="4">
+                        <Label Text="Vidi više" TextColor="{StaticResource Gray500}" VerticalOptions="Center"/>
+                        <Label Text=">" TextColor="{StaticResource Gray500}" VerticalOptions="Center"/>
+                    </StackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Sleep Quality Section -->
+            <VerticalStackLayout Spacing="12">
+                <Label Text="Kvalitet sna" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource PrimaryDarkText}"/>
+                <Frame Style="{StaticResource CardView}" Padding="16">
+                    <VerticalStackLayout Spacing="16">
+                        <Grid ColumnDefinitions="*, Auto, Auto">
+                            <Label Text="Mart 19-25" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" TextColor="{StaticResource Gray900}"/>
+                            <Image Grid.Column="1" Source="arrow_left_icon.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Margin="0,0,10,0" Opacity="0.5"/>
+                            <Image Grid.Column="2" Source="arrow_right_icon.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Opacity="0.5"/>
+                        </Grid>
+
+                        <!-- Bar Chart (Simplified GraphicsView) -->
+                        <Grid HeightRequest="150">
+                            <!-- Y-axis -->
+                            <VerticalStackLayout VerticalOptions="FillAndExpand" Spacing="25">
+                                <Label Text="9h" FontSize="10" TextColor="{StaticResource Gray400}"/>
+                                <Label Text="6h" FontSize="10" TextColor="{StaticResource Gray400}"/>
+                                <Label Text="3h" FontSize="10" TextColor="{StaticResource Gray400}"/>
+                                <Label Text="0h" FontSize="10" TextColor="{StaticResource Gray400}"/>
+                            </VerticalStackLayout>
+
+                            <!-- Bars -->
+                            <FlexLayout Margin="30,10,0,0" JustifyContent="SpaceEvenly" AlignItems="End">
+                                <BoxView Color="{StaticResource Secondary}" WidthRequest="16" HeightRequest="100"/>
+                                <BoxView Color="{StaticResource Secondary}" WidthRequest="16" HeightRequest="80"/>
+                                <BoxView Color="{StaticResource Primary}" WidthRequest="16" HeightRequest="120"/>
+                                <BoxView Color="{StaticResource Secondary}" WidthRequest="16" HeightRequest="90"/>
+                                <BoxView Color="{StaticResource Secondary}" WidthRequest="16" HeightRequest="110"/>
+                                <BoxView Color="{StaticResource Secondary}" WidthRequest="16" HeightRequest="60"/>
+                                <BoxView Color="{StaticResource Secondary}" WidthRequest="16" HeightRequest="100"/>
+                            </FlexLayout>
+                        </Grid>
+                         <!-- X-axis -->
+                        <FlexLayout Margin="30,0,0,0" JustifyContent="SpaceEvenly">
+                             <Label Text="P" FontSize="12" TextColor="{StaticResource Gray500}"/>
+                             <Label Text="U" FontSize="12" TextColor="{StaticResource Gray500}"/>
+                             <Label Text="S" FontSize="12" TextColor="{StaticResource Gray500}"/>
+                             <Label Text="Č" FontSize="12" TextColor="{StaticResource Gray500}"/>
+                             <Label Text="P" FontSize="12" TextColor="{StaticResource Gray500}"/>
+                             <Label Text="S" FontSize="12" TextColor="{StaticResource Gray500}"/>
+                             <Label Text="N" FontSize="12" TextColor="{StaticResource Gray500}"/>
+                        </FlexLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+            
+             <!-- Spacing for bottom tab bar -->
+            <BoxView HeightRequest="60" Color="Transparent"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
