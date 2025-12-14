@@ -75,7 +75,8 @@
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="20,30,20,20" Spacing="20">
                 <!-- Welcome Message -->
-                <Label Text="Dobrodošao/la nazad, Alex!" 
+                <Label x:Name="WelcomeLabel"
+                       Text="Dobrodošao/la nazad!" 
                        FontSize="45" 
                        FontAttributes="Bold" 
                        FontFamily="NunitoSans"
