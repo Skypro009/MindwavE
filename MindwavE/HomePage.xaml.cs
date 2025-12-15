@@ -31,11 +31,21 @@ public partial class HomePage : ContentPage
 
     private async void GoToChatPage(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//ChatPage"); // Using absolute route for TabBar page
+        await Shell.Current.GoToAsync(nameof(ChatPage)); // Using absolute route for TabBar page
     }
 
     private async void GoToSubscriptionPage(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(SubscriptionPage));
+    }
+
+    private async void OnLogoutClicked(object sender, EventArgs e)
+    {
+        bool confirm = await DisplayAlert("Odjava", "Da li ste sigurni da želite da se odjavite?", "Da", "Ne");
+        if (confirm)
+        {
+            await _authService.SignOut();
+            Application.Current.MainPage = new LoginPage(_authService);
+        }
     }
 }

@@ -9,19 +9,36 @@ public partial class ChatPage : ContentPage
 {
     private readonly ChatService _chatService;
     private readonly GeminiService _geminiService;
+    private readonly SubscriptionService _subscriptionService;
     public ObservableCollection<ChatMessage> Messages { get; set; } = new();
 
-    public ChatPage(ChatService chatService, GeminiService geminiService)
+    public ChatPage(ChatService chatService, GeminiService geminiService, SubscriptionService subscriptionService)
     {
         InitializeComponent();
         _chatService = chatService;
+        _chatService = chatService;
         _geminiService = geminiService;
+        _subscriptionService = subscriptionService;
         BindingContext = this;
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+        base.OnAppearing();
+        
+        // Access Control Check
+        var isPremium = await _subscriptionService.IsPremiumAsync();
+        if (!isPremium)
+        {
+            await DisplayAlert("Premium Feature", "Mindbot AI is only available for Premium users. Please upgrade to access this feature.", "OK");
+            
+            // Navigate to Subscription Page
+            // Navigate to SubscriptionPage via Shell route
+            await Shell.Current.GoToAsync(nameof(SubscriptionPage)); // Using absolute route to switch tabs if needed
+            return;
+        }
+
         await LoadMessages();
     }
 

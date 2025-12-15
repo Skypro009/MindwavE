@@ -26,6 +26,8 @@ public partial class LoginPage : ContentPage
         LoadingIndicator.IsVisible = true;
         LoadingIndicator.IsRunning = true;
         
+
+        
         try
         {
             var session = await _authService.SignIn(email, password);

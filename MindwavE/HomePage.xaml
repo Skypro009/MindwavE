@@ -69,6 +69,27 @@
                     <TapGestureRecognizer Tapped="GoToSubscriptionPage" />
                 </Image.GestureRecognizers>
             </Image>
+
+            <!-- Logout Button -->
+            <Border Grid.Column="2"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 15"
+                    BackgroundColor="#ff6b6b"
+                    Padding="15,10"
+                    VerticalOptions="Center"
+                    Margin="0,0,0,0">
+                <Border.Shadow>
+                    <Shadow Opacity="0.2" Radius="3" Offset="0,2" Brush="Black"/>
+                </Border.Shadow>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLogoutClicked"/>
+                </Border.GestureRecognizers>
+                <Label Text="Odjavi se" 
+                       TextColor="White" 
+                       FontFamily="NunitoSans" 
+                       FontAttributes="Bold"
+                       FontSize="14"/>
+            </Border>
         </Grid>
 
         <!-- Main Content Section -->

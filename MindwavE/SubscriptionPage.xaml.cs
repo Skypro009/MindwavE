@@ -5,11 +5,13 @@ namespace MindwavE;
 public partial class SubscriptionPage : ContentPage
 {
     private readonly SubscriptionService _subscriptionService;
+    private readonly PayPalService _payPalService;
 
-    public SubscriptionPage(SubscriptionService subscriptionService)
+    public SubscriptionPage(SubscriptionService subscriptionService, PayPalService payPalService)
     {
         InitializeComponent();
         _subscriptionService = subscriptionService;
+        _payPalService = payPalService;
     }
 
     protected override async void OnAppearing()
@@ -29,6 +31,17 @@ public partial class SubscriptionPage : ContentPage
             {
                 StatusLabel.Text = "Current Status: Active";
                 StatusLabel.TextColor = Colors.Green;
+                
+                if (sub.CurrentPeriodEnd.HasValue)
+                {
+                    ExpiryLabel.Text = $"Expires: {sub.CurrentPeriodEnd.Value.ToLocalTime():d}";
+                    ExpiryLabel.IsVisible = true;
+                }
+                else
+                {
+                    ExpiryLabel.IsVisible = false;
+                }
+
                 SubscribeButton.Text = "Manage Subscription";
                 SubscribeButton.IsEnabled = false; // Or redirect to management portal
             }
@@ -58,16 +71,51 @@ public partial class SubscriptionPage : ContentPage
 
         try
         {
-            // Simulate payment flow
-            await Task.Delay(1000); 
+            // 1. Create PayPal Order
+            var (orderId, approveUrl) = await _payPalService.CreateOrderAsync(9.99m);
+
+            // 2. Open PayPal WebView
+            var payPalPage = new PayPalPage(approveUrl);
             
-            await _subscriptionService.SubscribeAsync("pro_monthly");
-            await DisplayAlert("Success", "You are now subscribed to Pro Plan!", "OK");
-            await CheckStatus();
+            payPalPage.PaymentCompleted += async (s, success) =>
+            {
+                if (success)
+                {
+                    // 3. Capture Payment
+                    LoadingIndicator.IsVisible = true;
+                    LoadingIndicator.IsRunning = true;
+                    
+                    var captured = await _payPalService.CaptureOrderAsync(orderId);
+                    
+                    if (captured)
+                    {
+                        // 4. Activate Subscription
+                        await _subscriptionService.SubscribeAsync("pro_monthly");
+                        await DisplayAlert("Success", "Payment successful! You are now subscribed.", "OK");
+                        await CheckStatus();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Payment capture failed.", "OK");
+                    }
+                    
+                    LoadingIndicator.IsVisible = false;
+                    LoadingIndicator.IsRunning = false;
+                }
+                else
+                {
+                    await DisplayAlert("Cancelled", "Payment was cancelled.", "OK");
+                    await Shell.Current.GoToAsync("//HomePage");
+                }
+            };
+
+            await Navigation.PushModalAsync(payPalPage);
         }
         catch (Exception ex)
         {
             await DisplayAlert("Error", $"Subscription failed: {ex.Message}", "OK");
+            LoadingIndicator.IsVisible = false;
+            LoadingIndicator.IsRunning = false;
         }
         finally
         {

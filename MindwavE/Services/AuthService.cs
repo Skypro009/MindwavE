@@ -38,6 +38,11 @@ namespace MindwavE.Services
             await _supabaseClient.Auth.SignOut();
         }
 
+        public async Task<Session?> RetrieveSessionAsync()
+        {
+            return await _supabaseClient.Auth.RetrieveSessionAsync();
+        }
+
         public User? GetCurrentUser()
         {
             return _supabaseClient.Auth.CurrentUser;

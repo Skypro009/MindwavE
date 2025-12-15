@@ -19,6 +19,13 @@
                    HorizontalOptions="Center"
                    TextColor="#666666"/>
 
+            <Label x:Name="ExpiryLabel"
+                   Text=""
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="#888888"
+                   IsVisible="False"/>
+
             <Frame CornerRadius="10" Padding="20" BackgroundColor="White" HasShadow="True">
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Pro Plan" FontSize="22" FontAttributes="Bold" TextColor="#512BD4"/>

@@ -20,25 +20,67 @@
                    HorizontalOptions="Center"
                    TextColor="#666666"/>
             
-            <Entry x:Name="UsernameEntry"
-                   Placeholder="Username"
-                   TextColor="Black"
-                   PlaceholderColor="Gray"
-                   HeightRequest="50" />
+            <Border StrokeShape="RoundRectangle 25"
+                    StrokeThickness="0"
+                    BackgroundColor="White"
+                    HeightRequest="50"
+                    Padding="15,0">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                            Offset="0,2"
+                            Radius="5"
+                            Opacity="0.1" />
+                </Border.Shadow>
+                <Entry x:Name="UsernameEntry"
+                       Placeholder="Username"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="Transparent"
+                       HeightRequest="50"
+                       VerticalOptions="Center" />
+            </Border>
 
-            <Entry x:Name="EmailEntry"
-                   Placeholder="Email"
-                   Keyboard="Email"
-                   TextColor="Black"
-                   PlaceholderColor="Gray"
-                   HeightRequest="50" />
+            <Border StrokeShape="RoundRectangle 25"
+                    StrokeThickness="0"
+                    BackgroundColor="White"
+                    HeightRequest="50"
+                    Padding="15,0">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                            Offset="0,2"
+                            Radius="5"
+                            Opacity="0.1" />
+                </Border.Shadow>
+                <Entry x:Name="EmailEntry"
+                       Placeholder="Email"
+                       Keyboard="Email"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="Transparent"
+                       HeightRequest="50"
+                       VerticalOptions="Center" />
+            </Border>
 
-            <Entry x:Name="PasswordEntry"
-                   Placeholder="Šifra"
-                   IsPassword="True"
-                   TextColor="Black"
-                   PlaceholderColor="Gray"
-                   HeightRequest="50" />
+            <Border StrokeShape="RoundRectangle 25"
+                    StrokeThickness="0"
+                    BackgroundColor="White"
+                    HeightRequest="50"
+                    Padding="15,0">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                            Offset="0,2"
+                            Radius="5"
+                            Opacity="0.1" />
+                </Border.Shadow>
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="Šifra"
+                       IsPassword="True"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="Transparent"
+                       HeightRequest="50"
+                       VerticalOptions="Center" />
+            </Border>
 
             <Button Text="Napravi nalog"
                     Clicked="OnRegisterClicked"

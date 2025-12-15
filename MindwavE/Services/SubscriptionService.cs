@@ -59,5 +59,10 @@ namespace MindwavE.Services
                 await _supabaseClient.From<Subscription>().Insert(sub);
             }
         }
+        public async Task<bool> IsPremiumAsync()
+        {
+            var sub = await GetSubscriptionAsync();
+            return sub != null && sub.Status == "active";
+        }
     }
 }

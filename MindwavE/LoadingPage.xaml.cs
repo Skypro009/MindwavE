@@ -23,16 +23,25 @@ public partial class LoadingPage : ContentPage
 
         try
         {
+            System.Diagnostics.Debug.WriteLine("LoadingPage: Initializing Auth Service...");
             await _authService.InitializeAsync();
-            var session = _authService.GetCurrentSession();
+            System.Diagnostics.Debug.WriteLine("LoadingPage: Auth Service Initialized.");
+
+            var currentSession = _authService.GetCurrentSession();
+            System.Diagnostics.Debug.WriteLine($"LoadingPage: Final Session User = {currentSession?.User?.Email ?? "null"}");
 
             // Always set AppShell as the MainPage so Shell.Current is valid
             Application.Current.MainPage = new AppShell();
 
-            if (session?.User == null)
+            if (currentSession?.User == null)
             {
+                System.Diagnostics.Debug.WriteLine("LoadingPage: No user, going to Login.");
                 // Navigate to Login Page using Shell routing
                 await Shell.Current.GoToAsync(nameof(LoginPage));
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("LoadingPage: User found, staying on AppShell.");
             }
         }
         catch (Exception ex)

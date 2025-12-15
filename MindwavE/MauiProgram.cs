@@ -19,6 +19,7 @@ namespace MindwavE
                 });
 
             // Supabase Configuration
+
             var options = new Supabase.SupabaseOptions
             {
                 AutoRefreshToken = true,
@@ -33,6 +34,7 @@ namespace MindwavE
             builder.Services.AddSingleton<Services.ChatService>();
             builder.Services.AddSingleton<Services.SubscriptionService>();
             builder.Services.AddSingleton<Services.GeminiService>();
+            builder.Services.AddSingleton<Services.PayPalService>();
             
             // Pages
             builder.Services.AddTransient<LoginPage>();
