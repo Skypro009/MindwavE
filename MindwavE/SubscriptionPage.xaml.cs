@@ -64,6 +64,11 @@ public partial class SubscriptionPage : ContentPage
         }
     }
 
+    private async void GoBackToMainPage(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("///HomePage");
+    }
+
     private async void OnSubscribeClicked(object sender, EventArgs e)
     {
         LoadingIndicator.IsRunning = true;

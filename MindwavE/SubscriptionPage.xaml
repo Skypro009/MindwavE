@@ -6,16 +6,18 @@
              BackgroundColor="#F5F5F5">
     <ContentPage.Content>
         <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
-            
+
             <Label Text="Premium Access" 
                    FontSize="28" 
                    FontAttributes="Bold" 
+                   FontFamily="NunitoSans"
                    HorizontalOptions="Center" 
                    TextColor="#333333"/>
 
             <Label x:Name="StatusLabel"
                    Text="Current Status: Checking..."
                    FontSize="18"
+                   FontFamily="NunitoSans"
                    HorizontalOptions="Center"
                    TextColor="#666666"/>
 
@@ -32,7 +34,7 @@
                     <Label Text="• Unlimited AI Chat" TextColor="#333"/>
                     <Label Text="• Advanced Analytics" TextColor="#333"/>
                     <Label Text="• Priority Support" TextColor="#333"/>
-                    
+
                     <Button x:Name="SubscribeButton"
                             Text="Subscribe ($9.99/mo)"
                             Clicked="OnSubscribeClicked"
@@ -42,7 +44,19 @@
                             Margin="0,20,0,0"/>
                 </VerticalStackLayout>
             </Frame>
-            
+
+            <Button
+                Text="Izađi"
+                TextColor="White"
+                FontFamily="NunitoSans"
+                FontSize="15"
+                CornerRadius="20"
+                WidthRequest="80"
+                HorizontalOptions="Center"
+                x:Name="ExitBtn"
+                Clicked="GoBackToMainPage"
+                />
+
             <ActivityIndicator x:Name="LoadingIndicator" IsRunning="False" IsVisible="False" Color="#512BD4"/>
 
         </VerticalStackLayout>
