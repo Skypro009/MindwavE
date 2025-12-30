@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindwavE.AppointmentsPage"
+             BackgroundColor="#F5F5F5"
+             Title="Zakazano">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="24">
+            <!-- Header -->
+            <Grid ColumnDefinitions="*, Auto">
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Label Text="Zakazano" FontSize="32" FontAttributes="Bold" TextColor="{StaticResource PrimaryDarkText}" FontFamily="OpenSansSemibold"/>
+                    <Label Text="📞" FontSize="28" VerticalOptions="Center" TextColor="{StaticResource PrimaryDarkText}"/>
+                </HorizontalStackLayout>
+                
+                <ImageButton Grid.Column="1" Source="settings_gear.png" HeightRequest="32" WidthRequest="32"/>
+            </Grid>
+
+            <!-- Appointments List -->
+            <CollectionView x:Name="AppointmentsListView" ItemsSource="{Binding Appointments}" HeightRequest="320">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource CardView}" BackgroundColor="{StaticResource Secondary}" HeightRequest="70" Padding="16" Margin="0,0,0,12">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnAppointmentTapped"/>
+                            </Frame.GestureRecognizers>
+                            <Grid ColumnDefinitions="48, *, Auto">
+                                <Frame Padding="0" CornerRadius="24" HeightRequest="48" WidthRequest="48" BackgroundColor="White" HasShadow="False" VerticalOptions="Center">
+                                    <Label Text="{Binding Icon}" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Frame>
+                                
+                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Margin="12,0">
+                                    <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource SecondaryDarkText}"/>
+                                    <Label Text="{Binding Time, StringFormat='Zakazano: {0}'}" FontSize="14" TextColor="{StaticResource SecondaryDarkText}" IsVisible="{Binding Time, Converter={StaticResource StringNotEmptyConverter}}"/>
+                                </VerticalStackLayout>
+                                
+                                <Label Grid.Column="2" Text="📍" FontSize="24" VerticalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Add Appointment Button -->
+            <Button Text="+ Dodaj termin" 
+                    BackgroundColor="{StaticResource Primary}" 
+                    TextColor="White" 
+                    CornerRadius="20" 
+                    HeightRequest="44"
+                    Clicked="OnAddAppointment"/>
+
+            <!-- Calendar Section -->
+            <Frame Style="{StaticResource CardView}" Padding="16">
+                <VerticalStackLayout Spacing="16">
+                    <!-- Month/Year Header -->
+                    <Grid ColumnDefinitions="Auto, Auto, *, Auto, Auto">
+                        <ImageButton Source="arrow_left_icon.png" WidthRequest="24" HeightRequest="24" Clicked="OnPreviousMonth"/>
+                        <Label x:Name="MonthLabel" Grid.Column="1" Text="Dec" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Gray900}" Margin="10,0"/>
+                        <Label x:Name="YearLabel" Grid.Column="3" Text="2024" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Gray900}" Margin="10,0"/>
+                        <ImageButton Grid.Column="4" Source="arrow_right_icon.png" WidthRequest="24" HeightRequest="24" Clicked="OnNextMonth"/>
+                    </Grid>
+                    
+                    <!-- Calendar Grid -->
+                    <Grid x:Name="CalendarGrid" 
+                          RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto" 
+                          ColumnDefinitions="*,*,*,*,*,*,*" 
+                          RowSpacing="8"
+                          ColumnSpacing="4">
+                        <!-- Days are generated dynamically in code-behind -->
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Bottom spacing -->
+            <BoxView HeightRequest="60" Color="Transparent"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

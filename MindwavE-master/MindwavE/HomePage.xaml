@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindwavE.HomePage"
+             BackgroundColor="#F5F5F5">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="24">
+            
+            <!-- Header Section -->
+            <Grid ColumnDefinitions="*, Auto">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Dobrodošao/la nazad," FontSize="18" TextColor="{StaticResource Gray500}" FontFamily="OpenSansRegular"/>
+                    <Label Text="Alex!" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource PrimaryDarkText}" FontFamily="OpenSansRegular"/>
+                </VerticalStackLayout>
+                
+                <!-- Settings/Profile Icon -->
+                <Frame Grid.Column="1" HeightRequest="48" WidthRequest="48" CornerRadius="24" Padding="0" HasShadow="False" BackgroundColor="Transparent" BorderColor="{StaticResource Gray200}">
+                    <Image Source="mindwave_assistant_icon.png" Aspect="AspectFill" Margin="4"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToChatPage"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+
+            <!-- Search/Chat Bar -->
+            <Frame Style="{StaticResource CardView}" Padding="16,4" HeightRequest="56" Margin="0,8">
+                <Grid ColumnDefinitions="*, Auto">
+                    <Label Text="Razgovaraj sa našim AI-chatom..." VerticalOptions="Center" TextColor="{StaticResource Gray400}"/>
+                    <Image Grid.Column="1" Source="mindwave_assistant_icon.png" HeightRequest="32" WidthRequest="32"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoToChatPage"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <!-- Main Action Cards -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                <!-- Community Card -->
+                <Frame Grid.Column="0" Style="{StaticResource CardView}" BackgroundColor="{StaticResource Secondary}" HeightRequest="160">
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
+                        <Label Text="Zajednica" TextColor="{StaticResource SecondaryDarkText}" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
+                        <!-- Placeholder Icon -->
+                         <Label Text="👥" FontSize="40" HorizontalOptions="Center" TextColor="{StaticResource SecondaryDarkText}"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Diary Card -->
+                <Frame Grid.Column="1" Style="{StaticResource CardView}" BackgroundColor="{StaticResource Primary}" HeightRequest="160">
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
+                        <Label Text="Dnevnik" TextColor="White" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
+                        <!-- Placeholder Icon -->
+                         <Label Text="📖" FontSize="40" HorizontalOptions="Center" TextColor="White"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- Mood Tracker -->
+            <VerticalStackLayout Spacing="12">
+                <Label Text="Dnevni tracker raspoloženja" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource PrimaryDarkText}"/>
+                <Frame Style="{StaticResource CardView}" Padding="16">
+                    <VerticalStackLayout Spacing="16">
+                        <Label Text="Kako se osećaš danas?" FontSize="16" HorizontalOptions="Center" TextColor="{StaticResource Gray500}"/>
+                        <FlexLayout JustifyContent="SpaceBetween">
+                             <!-- Emojis (Text for now, should be images or better icons) -->
+                            <Label Text="😫" FontSize="32"/>
+                            <Label Text="😔" FontSize="32"/>
+                            <Label Text="😐" FontSize="32"/>
+                            <Label Text="🙂" FontSize="32"/>
+                            <Label Text="😁" FontSize="32"/>
+                        </FlexLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+            <!-- Exercises Section -->
+            <VerticalStackLayout Spacing="12">
+                <Grid ColumnDefinitions="*, Auto">
+                    <Label Text="Vežbe" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource PrimaryDarkText}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text=":" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource PrimaryDarkText}" VerticalOptions="Center"/>
+                </Grid>
+
+                <!-- Exercise 1 -->
+                <Frame Style="{StaticResource CardView}" BackgroundColor="{StaticResource Secondary}" Padding="0" HeightRequest="70">
+                    <Grid ColumnDefinitions="60, *, 60">
+                        <BoxView Color="{StaticResource SecondaryDarkText}" Opacity="0.1"/> <!-- Icon BG Stub -->
+                        <Label Text="∿" FontSize="32" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/> <!-- Icon Stub -->
+                        
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="Duboko disanje" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Završeno 80%" FontSize="12" TextColor="White" Opacity="0.8"/>
+                        </VerticalStackLayout>
+                        
+                        <!-- Progress Circle Stub -->
+                        <BoxView Grid.Column="2" Color="White" CornerRadius="15" HeightRequest="30" WidthRequest="30" Opacity="0.3" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Exercise 2 -->
+                <Frame Style="{StaticResource CardView}" BackgroundColor="{StaticResource Primary}" Padding="0" HeightRequest="70">
+                    <Grid ColumnDefinitions="60, *, 60">
+                        <BoxView Color="{StaticResource PrimaryDarkText}" Opacity="0.1"/> 
+                        <Label Text="☁" FontSize="32" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="Spavanje" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Završeno 100%" FontSize="12" TextColor="White" Opacity="0.8"/>
+                        </VerticalStackLayout>
+
+                         <BoxView Grid.Column="2" Color="White" CornerRadius="15" HeightRequest="30" WidthRequest="30" Opacity="0.3" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+            
+            <!-- Spacing for bottom tab bar -->
+            <BoxView HeightRequest="60" Color="Transparent"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

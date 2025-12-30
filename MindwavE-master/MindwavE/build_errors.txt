@@ -1,0 +1,25 @@
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml(1,1): error MAUIG1001: An error occured while parsing Xaml: Unexpected end tag. Line 19, position 3.. [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(7,13): error CS0103: The name 'InitializeComponent' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(20,17): error CS0103: The name 'HomeFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(21,17): error CS0103: The name 'HomeFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(22,17): error CS0103: The name 'TrackingFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(23,17): error CS0103: The name 'TrackingFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(24,17): error CS0103: The name 'ChatFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(25,17): error CS0103: The name 'ChatFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(26,17): error CS0103: The name 'MainFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(27,17): error CS0103: The name 'MainFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(33,17): error CS0103: The name 'HomeFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(34,17): error CS0103: The name 'HomeFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(35,17): error CS0103: The name 'TrackingFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(36,17): error CS0103: The name 'TrackingFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(37,17): error CS0103: The name 'ChatFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(38,17): error CS0103: The name 'ChatFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(41,17): error CS0103: The name 'MainFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(41,63): error CS0103: The name 'MainFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+C:\Users\User\Desktop\MindwavE-master\MindwavE\AppShell.xaml.cs(43,35): error CS0103: The name 'MainFlyoutItem' does not exist in the current context [C:\Users\User\Desktop\MindwavE-master\MindwavE\MindwavE.csproj::TargetFramework=net10.0-windows10.0.19041.0]
+
+Build FAILED.
+    5 Warning(s)
+    19 Error(s)
+
+Time Elapsed 00:00:06.50
